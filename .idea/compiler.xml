@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo-dao" />
-        <module name="demo-controller" />
-        <module name="demo-beans" />
-        <module name="demo-service-impl" />
         <module name="demo-service" />
+        <module name="demo-beans" />
+        <module name="demo-controller" />
+        <module name="demo-service-impl" />
       </profile>
     </annotationProcessing>
   </component>
