@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: @service-spring.application.name@
+  datasource:
+    username: @service-spring.datasource.username@
+    name: @service-spring.datasource.name@
+    url: @service-spring.datasource.url@
+    password: @service-spring.datasource.password@
+    type: @service-spring.datasource.type@
+    driver-class-name: @service-spring.datasource.driver-class-name@
+dubbo:
+  registry:
+    address: @service-dubbo.registry.address@
+  protocol:
+    port: @service-dubbo.protocol.port@
+    name: @service-dubbo.protocol.name@
+  monitor:
+    protocol: @service-dubbo.monitor.protocol@
+  scan:
+    base-packages: @service-dubbo.scan.base-packages@
+  application:
+    name: @service-dubbo.application.name@
+mybatis:
+  mapper-locations: @mybatis.mapper-locations@
+  type-aliases-package: @mybatis.type-aliases-package@
+pagehelper:
+  auto-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

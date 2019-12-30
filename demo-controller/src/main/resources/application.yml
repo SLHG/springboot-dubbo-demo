@@ -1,0 +1,13 @@
+server:
+  port: @control-server.port@
+  servlet:
+    context-path: @control-server.servlet.context-path@
+spring:
+  application:
+    name: @control-spring.application.name@
+dubbo:
+  consumer:
+    timeout: @control-dubbo.consumer.timeout@
+  application:
+    name: @control-dubbo.application.name@
+
