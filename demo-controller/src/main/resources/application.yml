@@ -10,4 +10,6 @@ dubbo:
     timeout: @control-dubbo.consumer.timeout@
   application:
     name: @control-dubbo.application.name@
-
+control-dubbo:
+  service:
+    url: @control-dubbo.service.url@
