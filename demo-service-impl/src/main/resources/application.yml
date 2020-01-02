@@ -1,6 +1,7 @@
 spring:
   application:
     name: @service-spring.application.name@
+  #数据库连接配置
   datasource:
     username: @service-spring.datasource.username@
     name: @service-spring.datasource.name@
@@ -8,6 +9,19 @@ spring:
     password: @service-spring.datasource.password@
     type: @service-spring.datasource.type@
     driver-class-name: @service-spring.datasource.driver-class-name@
+  #redis连接配置
+  redis:
+    cluster:
+      nodes: @redis.cluster.nodes@
+    password: @redis.password@
+    lettuce:
+      pool:
+        max-active: @redis.lettuce.pool.max-active@
+        max-wait: @redis.lettuce.pool.max-wait@
+        max-idle: @redis.lettuce.pool.max-idle@
+        min-idle: @redis.lettuce.pool.min-idle@
+    timeout: @redis.timeout@
+#dubbo配置
 dubbo:
   registry:
     address: @dubbo.registry.address@
@@ -20,9 +34,11 @@ dubbo:
     base-packages: @service-dubbo.scan.base-packages@
   application:
     name: @service-dubbo.application.name@
+#mysql 数据库配置
 mybatis:
   mapper-locations: @mybatis.mapper-locations@
   type-aliases-package: @mybatis.type-aliases-package@
+#mysql分页插件配置
 pagehelper:
   auto-dialect: mysql
   reasonable: true
