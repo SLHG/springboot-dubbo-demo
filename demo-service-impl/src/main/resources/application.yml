@@ -9,6 +9,11 @@ spring:
     password: @service-spring.datasource.password@
     type: @service-spring.datasource.type@
     driver-class-name: @service-spring.datasource.driver-class-name@
+    druid:
+      filter:
+        config:
+          enabled: @service-spring.datasource.druid.config.decrypt@
+      connection-properties: config.decrypt=@service-spring.datasource.druid.config.decrypt@;config.decrypt.key=@service-spring.datasource.druid.connection-properties.publicKey@
   #redis连接配置
   redis:
     cluster:
