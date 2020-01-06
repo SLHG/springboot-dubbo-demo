@@ -4,12 +4,15 @@ import com.alibaba.fastjson.JSON;
 import com.demo.beans.User;
 import com.demo.dao.UserMapper;
 import com.demo.service.UserService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.Service;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Service(group = "demo")
@@ -37,5 +40,12 @@ public class UserServiceImpl implements UserService {
             opsVal.set(String.valueOf(id), JSON.toJSONString(user), 600, TimeUnit.SECONDS);
         }
         return user;
+    }
+
+    @Override
+    public PageInfo<User> getUserByName(String name) {
+        PageHelper.startPage(1, 10);
+        List<User> list = userDao.getUserByName(name);
+        return new PageInfo<>(list);
     }
 }
