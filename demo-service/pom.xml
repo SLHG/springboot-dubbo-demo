@@ -22,7 +22,4 @@
             <artifactId>demo-beans</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>demo-service</finalName>
-    </build>
 </project>

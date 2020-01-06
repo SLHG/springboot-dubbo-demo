@@ -12,7 +12,4 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>demo-beans</name>
     <description>Demo project for Spring Boot</description>
-    <build>
-        <finalName>demo-beams</finalName>
-    </build>
 </project>

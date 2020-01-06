@@ -28,16 +28,4 @@
             </exclusions>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>demo-dao</finalName>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
-    </build>
 </project>
