@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.demo.beans.User;
 import com.demo.dao.UserMapper;
 import com.demo.service.UserService;
+import com.demo.service.config.DataType;
+import com.demo.service.config.SelectDataSource;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.Service;
@@ -47,5 +49,11 @@ public class UserServiceImpl implements UserService {
         PageHelper.startPage(1, 10);
         List<User> list = userDao.getUserByName(name);
         return new PageInfo<>(list);
+    }
+
+    @Override
+    @SelectDataSource(DataType.SLAVE_SOURCE)
+    public User getUserSlave(Integer id) {
+        return userDao.getUser(id);
     }
 }

@@ -1,19 +1,6 @@
 spring:
   application:
     name: @service-spring.application.name@
-  #数据库连接配置
-  datasource:
-    username: @service-spring.datasource.username@
-    name: @service-spring.datasource.name@
-    url: @service-spring.datasource.url@
-    password: @service-spring.datasource.password@
-    type: @service-spring.datasource.type@
-    driver-class-name: @service-spring.datasource.driver-class-name@
-    druid:
-      filter:
-        config:
-          enabled: @service-spring.datasource.druid.config.decrypt@
-      connection-properties: config.decrypt=@service-spring.datasource.druid.config.decrypt@;config.decrypt.key=@service-spring.datasource.druid.connection-properties.publicKey@
   #redis连接配置
   redis:
     cluster:
@@ -49,3 +36,22 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+#数据库连接配置
+datasource-master:
+  username: @datasource-master.username@
+  name: @datasource-master.name@
+  url: @datasource-master.url@
+  password: @datasource-master.password@
+  type: @datasource-master.type@
+  driver-class-name: @datasource-master.driver-class-name@
+  filters: @datasource-master.filters@
+  filter-connectProperties: config.decrypt=@datasource-master.druid.config.decrypt@;config.decrypt.key=@datasource-master.druid.connection-properties.publicKey@
+datasource-slave:
+  username: @datasource-slave.username@
+  name: @datasource-slave.name@
+  url: @datasource-slave.url@
+  password: @datasource-slave.password@
+  type: @datasource-slave.type@
+  driver-class-name: @datasource-slave.driver-class-name@
+  filters: @datasource-slave.filters@
+  filter-connectProperties: config.decrypt=@datasource-slave.druid.config.decrypt@;config.decrypt.key=@datasource-slave.druid.connection-properties.publicKey@
